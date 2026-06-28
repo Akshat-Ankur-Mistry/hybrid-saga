@@ -136,16 +136,30 @@ into a single outcome (fan-in).
 
 ### 2.3. The Hybrid Approach
 
-Now, let the saga participating components (aka. transactional components) participate in fan-out architecture, letting
-other non-transactional tasks/components to execute parallelly. or say, we can merge both patterns individually - a step
-in the pipeline as pure non transactional and other being pure transactional - is also valid. Transaction components
-will participate in saga behavior, letting itself being compensated, in case other saga participant has failed. *_see the open item_
+Our architectural objective with the _Hybrid Approach_ is to deliver operational flexibility without compromising data
+integrity. By integrating the Saga pattern with a Fan-out architecture, we enable non-transactional tasks to execute in
+parallel, while maintaining strict, sequential control over our core transactional components.
 
-#### 2.3.1. open item
+During the design phase, we evaluated a critical scenario: handling a non-transactional task failure that occurs after
+preceding transactional components have already committed. Restricting non-transactional execution once a saga begins
+would ensure safety, but it would severely limit our pipeline's scalability and code design.
 
-**[todo | decision pending]**
+To resolve this and maintain a predictable, scalable system, we are establishing the following architectural directives
+to govern the hybrid engine:
 
-if other non transaction task suppose failed after executing 2 transactional components, then also we would need to
-initiate the compensation. even though the non-transaction component did noit participate in saga, system sohuld
-revert back any rpeviously executed saga components. one of the other approaches would be to make sure once the saga
-starts, no other non-transactional components would be allowed. But this would limit the architecture and code desig
+* **Strict Transactional Isolation**: Transactional components are explicitly prohibited from participating in a fan-out
+execution. A pipeline step containing a transactional component must operate in total isolation—no other tasks (
+transactional or non-transactional) may run concurrently within that specific step. When we mutate state, we do it
+safely and predictably.
+
+* **Fail-Fast Error Propagation**: For non-transactional components executing in parallel, the engine will not wait for the
+fan-in (aggregation) phase to report an error. Any localized failure must throw an exception immediately to halt the
+pipeline and prevent unnecessary downstream processing.
+
+* **Universal Compensation Trigger**: System consistency is non-negotiable. An error at any stage of the pipeline—whether
+originating from a transactional or non-transactional component—will instantly trigger the Saga compensation workflow.
+The system will automatically revert all previously executed transactional components to ensure we never leave the
+pipeline in a partial state.
+
+#### 2.3.1. Diagram
+![Hybrid Pipeline Architecture.png](Hybrid-Pipeline-Architecture.png)
