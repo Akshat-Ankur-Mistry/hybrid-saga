@@ -3,11 +3,11 @@ package com.sankhya.hybridsaga.api;
 /**
  * A forward-only component in the pipeline.
  * <p>
- * This component only executes a {@link #forward(Object)} action and does not support rollback.
+ * This component only executes a {@link #forward(ForwardContext)} action and does not support rollback.
  * Therefore, its actions will <strong>never be compensated</strong>.
  * <p>
  * <strong>Warning on Failures:</strong> Even though this component cannot be rolled back,
- * if its {@link #forward(Object)} method throws an exception, it <strong>will</strong> halt the
+ * if its {@link #forward(ForwardContext)} method throws an exception, it <strong>will</strong> halt the
  * pipeline and trigger the compensation flow, rolling back any previously executed
  * {@link TransactionalComponent}s.
  *
@@ -18,7 +18,7 @@ package com.sankhya.hybridsaga.api;
  *
  * <h2>Intent over capability</h2>
  * This interface adds no new methods to {@link PipelineComponent}; it simply inherits
- * {@link #operationName()} and {@link #forward(Object)}. Its purpose is to structurally classify
+ * {@link #operationName()} and {@link #forward(ForwardContext)}. Its purpose is to structurally classify
  * the component as non-compensating, allowing the pipeline engine to treat it differently from
  * a {@link TransactionalComponent}. It remains {@code non-sealed} so developers can implement
  * it freely.
@@ -37,7 +37,7 @@ package com.sankhya.hybridsaga.api;
  * </ul>
  *
  * @param <M> the master request type shared by every component in the pipeline
- * @param <R> the result type produced by {@link #forward(Object)} and stored in the shared context
+ * @param <R> the result type produced by {@link #forward(ForwardContext)} and stored in the shared context
  */
 public non-sealed interface NonTransactionalComponent<M, R> extends PipelineComponent<M, R> {
     // Marker leaf: forward-only. All behavior is inherited from PipelineComponent.

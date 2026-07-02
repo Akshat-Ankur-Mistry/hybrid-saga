@@ -3,7 +3,7 @@ package com.sankhya.hybridsaga.api;
 /**
  * A pipeline component that fully participates in the Saga compensation pattern.
  * <p>
- * In addition to the standard forward action, this component provides a {@link #compensate(Object)}
+ * In addition to the standard forward action, this component provides a {@link #compensate(CompensationContext)}
  * method. If a downstream component fails, the pipeline engine will invoke this method to logically
  * undo the work previously completed by the forward action.
  *
@@ -43,16 +43,15 @@ package com.sankhya.hybridsaga.api;
  * to implement as many custom transactional steps as the application requires.
  *
  * @param <M> the master request type shared by every component in the pipeline
- * @param <R> the result type produced by the forward action, which is later handed back to the compensate action
+ * @param <R> the result type produced by the forward action, which is later handed back to the compensation action
  */
 public non-sealed interface TransactionalComponent<M, R> extends PipelineComponent<M, R> {
 
     /**
      * Logically undoes the work performed by this component's previously-successful forward action.
      *
-     * @param context the compensation state. This provides access to the master request and the specific
-     *                result produced by this component's forward execution.
-     *                TODO: Define the concrete CompensationContext class and replace the {@code Object} placeholder.
+     * @param context the isolated compensation state. This provides secure, strongly-typed access to
+     * the master request and the specific result produced by this component's forward execution.
      */
-    void compensate(Object context);
+    void compensate(CompensationContext<M, R> context);
 }

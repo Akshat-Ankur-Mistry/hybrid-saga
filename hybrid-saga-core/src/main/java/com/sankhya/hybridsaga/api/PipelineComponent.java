@@ -12,13 +12,13 @@ package com.sankhya.hybridsaga.api;
  * <ul>
  * <li>{@code M} - The <strong>master request</strong> type. This is the primary payload flowing
  * through the pipeline and remains constant across all components.</li>
- * <li>{@code R} - The <strong>result</strong> type produced by {@link #forward(Object)}. Because
+ * <li>{@code R} - The <strong>result</strong> type produced by {@link #forward(ForwardContext)}. Because
  * this varies per component, a pipeline registry handles mixed components as {@code PipelineComponent<M, ?>},
  * and results are retrieved from the context using a {@link Class} token.</li>
  * </ul>
  *
  * @param <M> the master request type (typically accessed via the context)
- * @param <R> the result type produced by {@link #forward(Object)} and stored in the context
+ * @param <R> the result type produced by {@link #forward(ForwardContext)} and stored in the context
  */
 public sealed interface PipelineComponent<M, R> permits TransactionalComponent, NonTransactionalComponent {
 
@@ -26,12 +26,17 @@ public sealed interface PipelineComponent<M, R> permits TransactionalComponent, 
      * Returns the unique identifier for this component.
      * <p>
      * This name serves as the source of truth for registering the component and acts as the key
-     * when storing the {@link #forward(Object)} result in the shared context. Implementations
-     * should typically return a constant.
+     * when storing the {@link #forward(ForwardContext)} result in the shared context.
+     * Implementations should typically return a constant.
+     * <p>
+     * <strong>ToDo: Registration Contract:</strong>
+     * To prevent accidental null leakage, the pipeline engine will enforce this strictly at startup.
+     * If a component attempts to register with a {@code null} operation name, the engine will immediately
+     * throw an initialization exception.
      *
-     * @return the unique operation name; never {@code null}
+     * @return the unique operation name; must never be {@code null}
      */
-    OperationName operationName(); // ToDo: ensure no accidental null leakage during component registration phase
+    OperationName operationName();
 
     /**
      * Executes the component's main forward logic. The returned result is recorded in the shared context
@@ -52,9 +57,8 @@ public sealed interface PipelineComponent<M, R> permits TransactionalComponent, 
      * This signature intentionally has NO checked exceptions. Implementations should throw
      * {@link RuntimeException}s on failure, as the underlying engine will catch general {@link Throwable}s.
      *
-     * @param context the execution context containing the master request and prior outputs.
-     *                TODO: Define the concrete Context class and replace the {@code Object} placeholder.
+     * @param context the execution environment containing the master request and prior outputs
      * @return the result of the forward operation, or {@code null} if this component does not produce a value
      */
-    R forward(Object context);
+    R forward(ForwardContext<M> context);
 }
