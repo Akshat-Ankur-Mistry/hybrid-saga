@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fe97c024-4efc-4875-a59b-bc35db7c8621" name="Changes" comment="open item addressed. hybrid architecture rules decided and finalized">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    <list default="true" id="fe97c024-4efc-4875-a59b-bc35db7c8621" name="Changes" comment="added OperationName, parent interface and two children elements. multiple todos. further refinement is expected.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hybrid-saga-core/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/hybrid-saga-core/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,61 +54,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000121264223" />
-      <entry key="MS500" value="1.0680161510426982" />
-      <entry key="S2" value="1.8561937235117423" />
-      <entry key="S5" value="2.426419602222222" />
-      <entry key="S10" value="2.8672718011071625" />
-      <entry key="S30" value="6.784573745001118" />
-      <entry key="S60" value="12.217609460045187" />
-      <entry key="M2" value="18.186451359218164" />
-      <entry key="M5" value="24.201858387098635" />
-      <entry key="M10" value="26.874768204658483" />
-      <entry key="M15" value="27.861885949455047" />
-      <entry key="M30" value="28.902436700943785" />
-      <entry key="H1" value="29.443857761381697" />
-      <entry key="H2" value="29.720058541092488" />
-      <entry key="H4" value="29.859557851166137" />
-      <entry key="D1" value="29.976527171971274" />
-      <entry key="W1" value="29.99664512304507" />
+      <entry key="MS100" value="1.0001982217868193" />
+      <entry key="MS500" value="1.3278873647786633" />
+      <entry key="S2" value="3.5535046099074767" />
+      <entry key="S5" value="6.734522322553595" />
+      <entry key="S10" value="10.960699824186358" />
+      <entry key="S30" value="20.13475655478794" />
+      <entry key="S60" value="27.144228519037867" />
+      <entry key="M2" value="35.96894691331467" />
+      <entry key="M5" value="47.07518733484869" />
+      <entry key="M10" value="52.76458462695056" />
+      <entry key="M15" value="54.982428744453586" />
+      <entry key="M30" value="57.38794682524805" />
+      <entry key="H1" value="58.666899470392096" />
+      <entry key="H2" value="59.32651684850981" />
+      <entry key="H4" value="59.661504179051285" />
+      <entry key="D1" value="59.943338577786186" />
+      <entry key="W1" value="59.991899476326935" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="0.0" />
-      <entry key="S60" value="0.0" />
-      <entry key="M2" value="0.0" />
-      <entry key="M5" value="0.0" />
-      <entry key="M10" value="0.0" />
-      <entry key="M15" value="0.0" />
-      <entry key="M30" value="0.0" />
-      <entry key="H1" value="0.0" />
-      <entry key="H2" value="0.0" />
-      <entry key="H4" value="0.0" />
-      <entry key="D1" value="0.0" />
-      <entry key="W1" value="0.0" />
+      <entry key="MS100" value="1.6673017133758986E-118" />
+      <entry key="MS500" value="2.782292847452846E-24" />
+      <entry key="S2" value="1.2915187329644123E-6" />
+      <entry key="S5" value="0.004410017206273954" />
+      <entry key="S10" value="0.06640796041344703" />
+      <entry key="S30" value="0.4049549518831459" />
+      <entry key="S60" value="0.6363607089404136" />
+      <entry key="M2" value="0.797722200355746" />
+      <entry key="M5" value="0.913567563465797" />
+      <entry key="M10" value="0.9558072836434123" />
+      <entry key="M15" value="0.9703168141686166" />
+      <entry key="M30" value="0.9850466050744084" />
+      <entry key="H1" value="0.9924951410835259" />
+      <entry key="H2" value="0.9962405036353049" />
+      <entry key="H4" value="0.9981184817622123" />
+      <entry key="D1" value="0.999686167502953" />
+      <entry key="W1" value="0.9999551607549143" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.009685238983808415" />
-      <entry key="MS500" value="0.44044821537547174" />
-      <entry key="S2" value="1.5600433439355108" />
-      <entry key="S5" value="2.2757882880726577" />
-      <entry key="S10" value="2.782991932870737" />
-      <entry key="S30" value="6.746230327840449" />
-      <entry key="S60" value="12.193293953652901" />
-      <entry key="M2" value="18.171871878227908" />
-      <entry key="M5" value="24.19513240581405" />
-      <entry key="M10" value="26.871214284550824" />
-      <entry key="M15" value="27.859470244584102" />
-      <entry key="M30" value="28.901204527359205" />
-      <entry key="H1" value="29.443235375026216" />
-      <entry key="H2" value="29.719745744565724" />
-      <entry key="H4" value="29.85940104844033" />
-      <entry key="D1" value="29.976500981697388" />
-      <entry key="W1" value="29.996641380189953" />
+      <entry key="MS100" value="0.9462465412892983" />
+      <entry key="MS500" value="1.3138210837048099" />
+      <entry key="S2" value="3.5447219441491304" />
+      <entry key="S5" value="6.7314871583325475" />
+      <entry key="S10" value="11.013908856395396" />
+      <entry key="S30" value="20.516537069868363" />
+      <entry key="S60" value="27.758372275004106" />
+      <entry key="M2" value="36.74930498673486" />
+      <entry key="M5" value="47.97906511961204" />
+      <entry key="M10" value="53.71490216388527" />
+      <entry key="M15" value="55.948923369620495" />
+      <entry key="M30" value="58.37099572090557" />
+      <entry key="H1" value="59.65837301224739" />
+      <entry key="H2" value="60.32224072337079" />
+      <entry key="H4" value="60.65936287082087" />
+      <entry key="D1" value="60.942981240436474" />
+      <entry key="W1" value="60.991848417024556" />
     </decayedShown>
   </component>
   <component name="ProjectColorInfo">{
@@ -128,7 +129,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "fan-out-exception-handling-decision",
+    "git-widget-placeholder": "create-api-layer",
     "git.auto.fetch.suggestion.counter": "1",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -202,7 +203,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782630969929</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="added OperationName, parent interface and two children elements. multiple todos. further refinement is expected.">
+      <option name="closed" value="true" />
+      <created>1782992264937</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1782992264937</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,7 +232,9 @@
     <MESSAGE value="documentation structure created" />
     <MESSAGE value="first draft created. &#10;pending open item to address: 2.3.1" />
     <MESSAGE value="open item addressed. hybrid architecture rules decided and finalized" />
-    <option name="LAST_COMMIT_MESSAGE" value="open item addressed. hybrid architecture rules decided and finalized" />
+    <MESSAGE value="added OperationName, parent interface and two children elements. multiple todos." />
+    <MESSAGE value="added OperationName, parent interface and two children elements. multiple todos. further refinement is expected." />
+    <option name="LAST_COMMIT_MESSAGE" value="added OperationName, parent interface and two children elements. multiple todos. further refinement is expected." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
