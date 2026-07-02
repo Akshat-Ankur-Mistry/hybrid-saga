@@ -1,8 +1,8 @@
 package com.sankhya.hybridsaga.api;
 
 /**
- * Thrown by {@link ContextView} reads when a stored value exists but is not assignable to the {@link Class}
- * type the caller asked for.
+ * Thrown by {@link ContextView} (and {@link ComponentOutcome} as well) reads when a stored value exists but is
+ * not assignable to the {@link Class} type the caller asked for.
  *
  * <p>Centralizing the cast and raising this typed exception - instead of letting a raw {@link ClassCastException}
  * surface deep inside caller code - means component authors never write an unchecked cast or

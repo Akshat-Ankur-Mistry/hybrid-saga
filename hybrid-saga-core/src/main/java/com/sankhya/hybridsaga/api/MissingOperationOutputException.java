@@ -27,7 +27,8 @@ public class MissingOperationOutputException extends HybridSagaException {
         this.operation = operation;
     }
 
-    /** * @return the operation name that had no stored output
+    /**
+     * @return the operation name that had no stored output
      */
     public OperationName operation() {
         return operation;

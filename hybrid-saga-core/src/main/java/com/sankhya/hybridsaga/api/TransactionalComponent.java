@@ -51,7 +51,7 @@ public non-sealed interface TransactionalComponent<M, R> extends PipelineCompone
      * Logically undoes the work performed by this component's previously-successful forward action.
      *
      * @param context the isolated compensation state. This provides secure, strongly-typed access to
-     * the master request and the specific result produced by this component's forward execution.
+     *                the master request and the specific result produced by this component's forward execution.
      */
     void compensate(CompensationContext<M, R> context);
 }
