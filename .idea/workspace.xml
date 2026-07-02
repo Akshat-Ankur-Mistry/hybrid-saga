@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="fe97c024-4efc-4875-a59b-bc35db7c8621" name="Changes" comment="open item addressed. hybrid architecture rules decided and finalized">
+      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" show_ignored="true">
+    <option name="groupingKeys">
+      <option value="directory" />
+      <option value="module" />
+      <option value="repository" />
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="INCOMING_COMMITS_CHECK_STRATEGY" value="FETCH" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="akshatankur/design/phase-01" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Akshat-Ankur-Mistry&quot;
+  }
+}</component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Akshat-Ankur-Mistry/hybrid-saga.git&quot;,
+    &quot;accountId&quot;: &quot;19b710e6-f2bf-4015-8272-f2ef92f3124e&quot;
+  }
+}</component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000000121264223" />
+      <entry key="MS500" value="1.0680161510426982" />
+      <entry key="S2" value="1.8561937235117423" />
+      <entry key="S5" value="2.426419602222222" />
+      <entry key="S10" value="2.8672718011071625" />
+      <entry key="S30" value="6.784573745001118" />
+      <entry key="S60" value="12.217609460045187" />
+      <entry key="M2" value="18.186451359218164" />
+      <entry key="M5" value="24.201858387098635" />
+      <entry key="M10" value="26.874768204658483" />
+      <entry key="M15" value="27.861885949455047" />
+      <entry key="M30" value="28.902436700943785" />
+      <entry key="H1" value="29.443857761381697" />
+      <entry key="H2" value="29.720058541092488" />
+      <entry key="H4" value="29.859557851166137" />
+      <entry key="D1" value="29.976527171971274" />
+      <entry key="W1" value="29.99664512304507" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="0.0" />
+      <entry key="S10" value="0.0" />
+      <entry key="S30" value="0.0" />
+      <entry key="S60" value="0.0" />
+      <entry key="M2" value="0.0" />
+      <entry key="M5" value="0.0" />
+      <entry key="M10" value="0.0" />
+      <entry key="M15" value="0.0" />
+      <entry key="M30" value="0.0" />
+      <entry key="H1" value="0.0" />
+      <entry key="H2" value="0.0" />
+      <entry key="H4" value="0.0" />
+      <entry key="D1" value="0.0" />
+      <entry key="W1" value="0.0" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.009685238983808415" />
+      <entry key="MS500" value="0.44044821537547174" />
+      <entry key="S2" value="1.5600433439355108" />
+      <entry key="S5" value="2.2757882880726577" />
+      <entry key="S10" value="2.782991932870737" />
+      <entry key="S30" value="6.746230327840449" />
+      <entry key="S60" value="12.193293953652901" />
+      <entry key="M2" value="18.171871878227908" />
+      <entry key="M5" value="24.19513240581405" />
+      <entry key="M10" value="26.871214284550824" />
+      <entry key="M15" value="27.859470244584102" />
+      <entry key="M30" value="28.901204527359205" />
+      <entry key="H1" value="29.443235375026216" />
+      <entry key="H2" value="29.719745744565724" />
+      <entry key="H4" value="29.85940104844033" />
+      <entry key="D1" value="29.976500981697388" />
+      <entry key="W1" value="29.996641380189953" />
+    </decayedShown>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3CVfJOwt2Mhx3aTEMvJq4GRlMnW" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "git-widget-placeholder": "fan-out-exception-handling-decision",
+    "git.auto.fetch.suggestion.counter": "1",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ACER/hybrid-saga/hybrid-saga",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/ACER/hybrid-saga/hybrid-saga/doc/src/main/java/org/example/Main.java",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="hybrid-saga" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="hybrid-saga" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+        <option value="bundled-js-predefined-d6986cc7102b-31caf2ab9e3c-JavaScript-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="fe97c024-4efc-4875-a59b-bc35db7c8621" name="Changes" comment="" />
+      <created>1776475586955</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776475586955</updated>
+      <workItem from="1776475588753" duration="5002000" />
+      <workItem from="1782546661245" duration="6681000" />
+      <workItem from="1782572307842" duration="1427000" />
+      <workItem from="1782625715008" duration="11000" />
+      <workItem from="1782625748359" duration="2813000" />
+      <workItem from="1782983906137" duration="1215000" />
+    </task>
+    <task id="LOCAL-00001" summary="documentation structure created">
+      <option name="closed" value="true" />
+      <created>1776477200040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776477200040</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first draft created. &#10;pending open item to address: 2.3.1">
+      <option name="closed" value="true" />
+      <created>1782571848216</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1782571848216</updated>
+    </task>
+    <task id="LOCAL-00003" summary="open item addressed. hybrid architecture rules decided and finalized">
+      <option name="closed" value="true" />
+      <created>1782630969929</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1782630969929</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="documentation structure created" />
+    <MESSAGE value="first draft created. &#10;pending open item to address: 2.3.1" />
+    <MESSAGE value="open item addressed. hybrid architecture rules decided and finalized" />
+    <option name="LAST_COMMIT_MESSAGE" value="open item addressed. hybrid architecture rules decided and finalized" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/doc/src/main/java/org/example/Main.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

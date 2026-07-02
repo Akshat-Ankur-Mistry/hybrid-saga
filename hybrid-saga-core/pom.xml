@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>com.sankhya</groupId>
+		<artifactId>hybrid-saga-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>hybrid-saga-core</artifactId>
+	<name>hybrid-saga-core</name>
+	<description>Framework-agnostic core of the hybrid saga library: contracts (api), extension points (spi), and the engine (core). Zero Spring.</description>
+
+	<!--
+      The published library. Its ONLY compile dependency is the SLF4J API (a logging facade, never a binding -
+      the consumer chooses the implementation). No Spring, no HTTP, no Lombok. This is what keeps the engine
+      usable from any runtime.
+    -->
+	<dependencies>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<!-- Enforces the api/spi/core layering rules as a build-time test (not managed by the Spring BOM). -->
+		<dependency>
+			<groupId>com.tngtech.archunit</groupId>
+			<artifactId>archunit-junit5</artifactId>
+			<version>1.4.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
