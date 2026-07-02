@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!--
+      PARENT / AGGREGATOR POM for the hybrid-saga reactor.
+
+      Deliberately does NOT inherit spring-boot-starter-parent. A publishable library should not impose
+      Spring Boot's application opinions (repackage goal, etc.) on the build, and crucially the parent is an
+      internal build detail that must never leak to consumers. Instead, we IMPORT spring-boot-dependencies as a
+      BOM (so Spring versions are managed for the adapter modules) and pin our own plugin versions, since
+      dropping starter-parent also drops its pluginManagement.
+    -->
+    <groupId>com.sankhya</groupId>
+    <artifactId>hybrid-saga-parent</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+    <name>hybrid-saga-parent</name>
+    <description>Reactor parent for the hybrid saga orchestration library (core + Spring Boot autoconfigure + starter +
+        example).
+    </description>
+
+    <modules>
+        <module>hybrid-saga-core</module>
+    </modules>
+
+    <properties>
+        <java.version>25</java.version>
+        <maven.compiler.release>25</maven.compiler.release>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <spring-boot.version>4.1.0</spring-boot.version>
+        <!-- Plugin versions pinned here because there is no starter-parent to manage them. -->
+        <maven-compiler-plugin.version>3.14.1</maven-compiler-plugin.version>
+        <maven-surefire-plugin.version>3.5.6</maven-surefire-plugin.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Manage Spring (and SLF4J, JUnit, etc.) versions WITHOUT inheriting Boot's build opinions. -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Our own modules, so child modules can depend on them without repeating the version. -->
+            <dependency>
+                <groupId>com.deloitte</groupId>
+                <artifactId>hybrid-saga-core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deloitte</groupId>
+                <artifactId>hybrid-saga-spring-boot-autoconfigure</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.deloitte</groupId>
+                <artifactId>hybrid-saga-spring-boot-starter</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${maven-compiler-plugin.version}</version>
+                    <configuration>
+                        <release>${maven.compiler.release}</release>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${maven-surefire-plugin.version}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
